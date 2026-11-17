@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Правила використання Cookies — Paxorin | paxorin.com</title>
+  <meta name="description" content="Правила Cookies для paxorin.com: які cookies використовуються, для чого, як змінити вибір, як відключити у браузері." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://paxorin.com/cookies.html" />
+  <link rel="icon" href="assets/images/logo.jpg" type="image/png">
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="index.html" aria-label="Paxorin — на головну">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <div style="font-size:14px; line-height:1.1"><span>Paxorin</span> <span style="color:rgba(245,247,251,.65); font-weight:800">• документи</span></div>
+            <div style="font-size:12px; color:rgba(245,247,251,.65); font-weight:700">Правила Cookies</div>
+          </div>
+        </a>
+        <div class="nav-right">
+          <a class="btn small ghost" href="index.html">На головну</a>
+          <a class="btn small" href="privacy.html" rel="nofollow">Конфіденційність</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Правила використання Cookies</h2>
+          <p>Пояснюємо, що таке cookies, які саме можуть використовуватись на paxorin.com та як керувати вибором.</p>
+        </div>
+        <span class="badge">Оновлено: <span id="year"></span></span>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0">1. Що таке cookies</h3>
+        <p>
+          Cookies — це невеликі файли, які браузер може зберігати на вашому пристрої. Вони допомагають сайту
+          запам’ятовувати ваші налаштування, сесію та інші параметри.
+        </p>
+
+        <div class="divider"></div>
+
+        <h3>2. Які cookies ми використовуємо</h3>
+        <p>
+          На paxorin.com можливі такі категорії:
+        </p>
+        <ul>
+          <li><b>Необхідні</b> — щоб сайт коректно працював (наприклад, базові налаштування інтерфейсу).</li>
+          <li><b>Аналітичні</b> — щоб розуміти, які розділи корисні, а які потребують покращення (за вашою згодою).</li>
+          <li><b>Функціональні</b> — щоб запам’ятовувати ваші вибори (наприклад, рішення щодо cookies).</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h3>3. Ваш вибір та як його змінити</h3>
+        <p>
+          На головній сторінці відображається банер cookies. Він зберігає ваш вибір у браузері.
+          Ви можете змінити рішення тут:
+        </p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+          <button class="btn" type="button" id="resetCookies">Скинути вибір cookies</button>
+          <a class="btn ghost" href="index.html" rel="nofollow">Повернутися на головну</a>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>4. Як вимкнути cookies у браузері</h3>
+        <p>
+          Ви можете вимкнути або обмежити cookies у налаштуваннях браузера. Зверніть увагу:
+          якщо вимкнути необхідні cookies, частина функцій може працювати некоректно.
+        </p>
+
+        <div class="divider"></div>
+
+        <h3>5. Контакти</h3>
+        <p>
+          Якщо є питання щодо cookies або приватності:<br>
+          Email: <a href="mailto:info@paxorin.com"><b>info@paxorin.com</b></a><br>
+          Телефон: <a href="tel:+380972000000"><b>+38 (097) 200-00-00</b></a>
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="footer">
+        <div class="container">
+          <div class="foot">
+            <div>© <span id="year2"></span> Paxorin</div>
+            <div style="display:flex; gap:14px; flex-wrap:wrap">
+              <a href="index.html">Головна</a>
+              <a href="privacy.html" rel="nofollow">Конфіденційність</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      var y = new Date().getFullYear();
+      var a = document.getElementById("year");
+      var b = document.getElementById("year2");
+      if(a) a.textContent = String(y);
+      if(b) b.textContent = String(y);
+
+      var btn = document.getElementById("resetCookies");
+      if(btn){
+        btn.addEventListener("click", function(){
+          try { localStorage.removeItem("paxorin_cookie_choice"); } catch(e){}
+          alert("Вибір cookies скинуто. Поверніться на головну — банер з’явиться знову.");
+        });
+      }
+    })();
+  </script>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
